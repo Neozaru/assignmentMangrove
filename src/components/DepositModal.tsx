@@ -73,12 +73,14 @@ const DepositModal = ({ kandelAddress, market, onClose }: Props) => {
       return { text: `Unsufficient ${market.quote.symbol} balance` }
     }
 
-    for (let i = 0; i < 2; i++) {
+    const allowancesLength = allowances?.length
+
+    for (let i = 0; i < allowancesLength; i++) {
       const allowance = allowances?.[i];
       const needed = amountsWei[i];
 
       // LIMITATION: Could be refactored with similar logic to KandelSetupModal
-      if (allowance?.value && needed > allowance.value) {
+      if (needed > allowance.value) {
         const token = i === BaseQuoteIndex.BASE ? market.base : market.quote;
         return {
           text: `Approve ${token.symbol}`,
