@@ -32,7 +32,6 @@ const WithdrawReservesModal = ({ onClose, kandelAddress }: Props) => {
   }, [connectedWalletAddress, retractAndWithdrawAll, openConnectModal])
 
   useEffect(() => {
-    console.warn('tx receipt', txReceipt)
     if (txReceipt?.status === 'success') {
       onClose()
     }

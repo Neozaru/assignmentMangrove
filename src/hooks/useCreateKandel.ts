@@ -12,7 +12,6 @@ const useCreateKandel = ({ seederAddress, market }: Props) => {
   const { writeContract, txReceipt } = useWriteContractAndWaitForTransactionReceipt()
 
   const createKandel = useCallback(() => {
-    console.warn('Calling sow', { seederAddress, market })
     return writeContract({
       address: seederAddress,
       abi: kandelSeederABI,

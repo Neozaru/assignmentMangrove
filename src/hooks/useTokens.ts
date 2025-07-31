@@ -28,8 +28,6 @@ export function useTokens({ tokens = [], enabled = true }: UseTokensParams) {
     query: { enabled },
   })
 
-  console.warn('query?.data', query?.data)
-
   const data: Token[] = useMemo(() => {
     if (!query.data) {
       return tokens.map(({ address, chainId }) => ({
