@@ -1,12 +1,25 @@
 # Kandel LP UI
 
-  
 
 UI (index): http://neozaru.ovh:3000/
 UI (WETH/USDC market): http://localhost:3000/markets/8453-0x4200000000000000000000000000000000000006-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913-1
 
+# Build yourself
+
+Create `.env.local` file and define your RPC URL:
+```
+NEXT_PUBLIC_BASE_URL_WSS=wss://base-mainnet.g.alchemy.com/v2/<...>
+
+```
+
+Then build or run
+```
+npm install
+npm run dev
+```
+
   
-  # App
+# App
 ## FEATURES
 - Visalize markets (3 markets listed in index, but possible to edit URL manually for other markets).
 - Create new Kandel instance.
@@ -33,7 +46,7 @@ UI (WETH/USDC market): http://localhost:3000/markets/8453-0x42000000000000000000
 
   
 
-IDEAS
+## IDEAS
 
 - Optional "around current price" option when creating a Kandel position. This depends on who is the audience of the UI. Retail user will most likely want a single Kandel strategy around current price with time horizon of a few days/weeks.
 
